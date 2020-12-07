@@ -1,0 +1,15 @@
+input[type=checkbox] {
+    margin-right: 20px;
+}
+
+.todos__task {
+    color: #A2ABBF;
+    margin-bottom: 15px;
+    min-width: 300px;
+    text-align: left;
+}
+
+.todos__task--done {
+    text-decoration: line-through;
+    font-weight: bold;
+}

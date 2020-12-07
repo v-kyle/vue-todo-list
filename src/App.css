@@ -9,4 +9,10 @@
     align-items: center;
     height: 90vh;
     padding: 10px;
-  }
+}
+
+@media (max-width: 800px) {
+    #app {
+        align-items: flex-start;
+    }
+}

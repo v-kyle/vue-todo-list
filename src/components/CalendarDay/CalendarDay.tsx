@@ -24,7 +24,10 @@ export default class CalendarDay extends VueComponent<IProps> {
         if (!this.date) {
             classes.push(styles.hidden);
         }
-        return classes
+        if (this.date && this.store.allDaysWithTasks.includes(this.date)) {
+            classes.push(styles['has-task']);
+        }
+        return classes;
     }
 
     changeActiveDay(day: number | null) {

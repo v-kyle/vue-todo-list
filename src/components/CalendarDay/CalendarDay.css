@@ -9,6 +9,9 @@ button:not(.hidden) {
 
 button:not(.active) {
     background: transparent;
+}
+
+button:not(.active):not(.has-task) {
     color: #7C86A2;
 }
 
@@ -16,4 +19,8 @@ button:not(.active) {
     opacity: 1;
     color: white;
     background: #7ED5FC;
+}
+
+.has-task {
+    color: #AA3434;
 }

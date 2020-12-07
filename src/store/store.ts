@@ -1,10 +1,6 @@
-import { State, Getter, Mutation, Action } from 'vuex-simple';
-
-interface Task {
-    date: Date;
-    title: string;
-    done: boolean;
-}
+import { State, Getter, Mutation } from 'vuex-simple';
+import Task from "@/models/Task";
+import { v4 as uuid } from 'uuid';
 
 export default class MyStore {
     @State()
@@ -16,8 +12,13 @@ export default class MyStore {
     }
 
     @Getter()
-    public get getAllTasks(): Array<Task> {
-        return this.tasks;
+    public get allDaysWithTasks(): Array<number> {
+        return this.tasks.map(task => task.date.getDate());
+    }
+
+    @Getter()
+    public get tasksForActiveDay(): Array<Task> {
+        return this.tasks.filter(task => task.date.getDate() === this.day);
     }
 
     @Getter()
@@ -31,7 +32,21 @@ export default class MyStore {
     }
 
     @Mutation()
-    public addTask(task: Task) {
-        this.tasks.push(task);
+    public addTask(title: string) {
+        const date = new Date(new Date().setDate(this.activeDay));
+        this.tasks.push({
+            id: uuid(),
+            title,
+            date,
+            done: false,
+        });
+    }
+
+    @Mutation()
+    public toggleTask(id: string) {
+        const task = this.tasks.find(task => task.id === id);
+        if (task) {
+            task.done = !task.done;
+        }
     }
 }
