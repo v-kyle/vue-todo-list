@@ -1,0 +1,7 @@
+.todos {
+    width: 387px;
+    height: 350px;
+
+    box-shadow: 0 2px 23px #EDEDED;
+    border-radius: 6px;
+}

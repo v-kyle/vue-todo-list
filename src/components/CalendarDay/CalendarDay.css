@@ -1,0 +1,19 @@
+.hidden {
+    visibility: hidden;
+}
+
+button:not(.hidden) {
+    border: none;
+    cursor: pointer;
+}
+
+button:not(.active) {
+    background: transparent;
+    color: #7C86A2;
+}
+
+.active {
+    opacity: 1;
+    color: white;
+    background: #7ED5FC;
+}

@@ -1,5 +1,5 @@
 import { Component, Vue } from 'vue-property-decorator';
-import TodoListWithCalendar from "@/components/TodoListWithCalendar";
+import TodoListWithCalendar from "@/components/TodoListWithCalendar/TodoListWithCalendar";
 
 import './App.css'
 
