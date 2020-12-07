@@ -5,6 +5,7 @@
 button:not(.hidden) {
     border: none;
     cursor: pointer;
+    font-size: 1.1rem;
 }
 
 button:not(.active) {
@@ -23,4 +24,5 @@ button:not(.active):not(.has-task) {
 
 .has-task {
     color: #AA3434;
+    font-weight: bold;
 }

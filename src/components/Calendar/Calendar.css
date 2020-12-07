@@ -30,13 +30,13 @@
 
 .calendar__days--week {
     color: rgba(52, 72, 94, 0.536062);
+    font-size: 1.1rem;
 }
 
 .calendar__days > button {
     border-radius: 50%;
     width: 33px;
     height: 33px;
-    font-weight: 500;
     font-size: 15px;
 }
 
