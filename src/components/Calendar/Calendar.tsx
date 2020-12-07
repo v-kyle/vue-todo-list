@@ -2,8 +2,6 @@ import { Component, Vue } from 'vue-property-decorator';
 import { getDaysInMonth, startOfMonth} from 'date-fns';
 import { ru } from 'date-fns/locale'
 import styles from "./Calendar.css?module";
-import MyStore from "@/store/store";
-import {useStore} from "vuex-simple";
 
 import CalendarDay from "@/components/CalendarDay/CalendarDay";
 
@@ -11,7 +9,6 @@ import CalendarDay from "@/components/CalendarDay/CalendarDay";
 export default class Calendar extends Vue {
 
     currentDate: Date = new Date();
-    public store: MyStore = useStore(this.$store);
 
     get firstDayInCurrentMonth(): number {
         const firstDay = startOfMonth(this.currentDate).getDay();
